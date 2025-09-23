@@ -23,7 +23,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { auhtClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -60,7 +60,7 @@ export function SignInForm() {
     setError(null);
     setLoading(true);
 
-    const { error } = await auhtClient.signIn.email({
+    const { error } = await authClient.signIn.email({
       email,
       password,
       rememberMe,

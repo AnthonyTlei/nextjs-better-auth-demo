@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { auhtClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { User } from "@/lib/auth";
 
@@ -69,7 +69,7 @@ function SignOutItem() {
   const router = useRouter();
 
   async function handleSignOut() {
-    const { error } = await auhtClient.signOut();
+    const { error } = await authClient.signOut();
 
     if (error) {
       toast.error(error.message || "Something went wrong.");
